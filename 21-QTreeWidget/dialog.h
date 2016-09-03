@@ -11,8 +11,8 @@ class Dialog;
 class Dialog : public QDialog
 {
     Q_OBJECT
-    void AddRoot(QString name,QString Description);
-    void AddChild(QTreeWidgetItem *parent, QString name,QString Description);
+    QTreeWidgetItem* AddRoot(QString name,QString Description);
+    QTreeWidgetItem* AddChild(QTreeWidgetItem *parent, QString name,QString Description);
 
 public:
     explicit Dialog(QWidget *parent = 0);
