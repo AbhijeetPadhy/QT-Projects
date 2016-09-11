@@ -1,10 +1,11 @@
 #ifndef DIALOG_H
 #define DIALOG_H
 
+#include "mythread.h"
 #include <QDialog>
 
 namespace Ui {
-class Dialog;
+    class Dialog;
 }
 
 class Dialog : public QDialog
@@ -14,9 +15,18 @@ class Dialog : public QDialog
 public:
     explicit Dialog(QWidget *parent = 0);
     ~Dialog();
+    MyThread *mThread;
 
 private:
     Ui::Dialog *ui;
+
+public slots:
+    void onNumberChanged(int);
+
+
+private slots:
+    void on_pushButton_2_clicked();
+    void on_pushButton_clicked();
 };
 
 #endif // DIALOG_H
